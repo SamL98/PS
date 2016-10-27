@@ -1,0 +1,30 @@
+<div class="center jumbotron" id="center">
+<h1>BallotBot</h1>
+</div>
+<div id="form">
+<%= form_tag("/search", method: "get") do %>
+	<%= label_tag(:q, "Enter your search: ") %>
+	<%= text_field_tag(:q) %>
+	<%= submit_tag("Search") %>
+<% end %>
+</div>
+<style>
+	#center {
+		background: rgb(255, 153, 0);
+		color: #FFFFFF;
+		font-size: 50px;
+	}
+	h1 {
+		margin-left: 100px;
+	}
+	#form {
+		font-size: 25px;
+		color: gray;
+		margin-left: 75px;
+	}
+	input {
+		margin-left: 15px;
+		margin-right: 15px;
+		border-radius: 10px;
+	}
+</style>

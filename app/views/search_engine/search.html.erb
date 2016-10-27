@@ -1,0 +1,19 @@
+<%= @articles.each do |article| %>
+	<h2><%= link_to "#{article.title}", title_path(article.index), {class: "link"} %></h2>
+	<p><%= article.text[0..article.text.index('.')] + "..." %></p>
+<% end %>
+<script type="text/javascript">
+	var start = Date.now();
+	$('a').click(function(){
+		index = 0
+		$.post('/log', {article: {index: index, rand_index: 0, time_spent: Date.now()-start}},
+			function(response) {
+				console.log(response);
+		});
+	});
+</script>
+<style>
+.link, .link:hover, .link:focus {
+	color: blue;
+}
+</style>

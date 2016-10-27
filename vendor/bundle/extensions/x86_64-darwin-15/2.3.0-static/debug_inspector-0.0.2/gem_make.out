@@ -1,0 +1,15 @@
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/debug_inspector-0.0.2/ext/debug_inspector
+/Users/SamLerner/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160916-11776-zxmz1z.rb extconf.rb
+creating Makefile
+
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20160916-11776-1kqf3ft

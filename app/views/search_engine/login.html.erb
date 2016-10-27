@@ -1,0 +1,35 @@
+<div class="center jumbotron" id="center">
+<h1>BallotBot</h1>
+</div>
+<div id="form">
+<%= form_tag("/home", method: "get") do %>
+	<%= label_tag(:subj, "Enter subject identifier: ") %>
+	<%= text_field_tag(:subj) %>
+	<p></p>
+	<%= label_tag(:cond, "Enter testing condition: ") %>
+	<%= radio_button_tag(:cond, "1") %>
+	<%= radio_button_tag(:cond, "2") %>
+	<p></p>
+	<div id="submit">
+	<%= submit_tag("Login") %>
+	</div>
+<% end %>
+</div>
+<style>
+	#center {
+		background: rgb(255, 153, 0);
+		color: #FFFFFF;
+		font-size: 50px;
+	}
+	h1 {
+		margin-left: 100px;
+	}
+	#form {
+		margin-left: 75px;
+		font-size: 25px;
+		color: gray;
+	}
+	#submit {
+		margin-top: 25px;
+	}
+</style>
