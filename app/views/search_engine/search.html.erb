@@ -1,4 +1,4 @@
-<%= @articles.each do |article| %>
+<% @articles.each do |article| %>
 	<h2><%= link_to "#{article.title}", title_path(article.index), {class: "link"} %></h2>
 	<p><%= article.text[0..article.text.index('.')] + "..." %></p>
 <% end %>
