@@ -1,7 +1,7 @@
 <div class="center jumbotron" id="center">
 <h1>BallotBot</h1>
 </div>
-<div id="form">
+<div id="form" class="allow-nav">
 <%= form_tag("/search", method: "get") do %>
 	<%= label_tag(:q, "Enter your search: ") %>
 	<%= text_field_tag(:q) %>
@@ -9,10 +9,11 @@
 <% end %>
 </div>
 <script type="text/javascript">
-	$(function() {
-		$(window).on('popstate', function() {
-			alert("Please cancel this action.");
-		});
+	$(window).on('beforeunload', function(e) {
+		alert('Please cancel this action');
+	});
+	$('.allow-nav').on('click', function(e) {
+		$(window).off('beforeunload');
 	});
 </script>
 <style>
