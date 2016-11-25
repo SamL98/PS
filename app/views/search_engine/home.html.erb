@@ -9,13 +9,14 @@
 <% end %>
 </div>
 <script type="text/javascript">
-	jQuery(document).ready(function($) {
-  		if (window.history && window.history.pushState) {
-   			window.history.pushState('forward', null, './#forward');
+	$(function() {
+		if (window.history && window.history.pushState) {
+    		window.history.pushState('', null, './');
     		$(window).on('popstate', function() {
-      			alert('Back button was pressed.');
+        		alert('Please cancel this action.');
+        		document.location.href = '/submit';
     		});
-  		}
+		}
 	});
 </script>
 <style>
