@@ -9,12 +9,17 @@
 <% end %>
 </div>
 <script type="text/javascript">
-	$(window).on('beforeunload', function(e) {
-		alert('Please cancel this action');
-	});
-	$('.allow-nav').on('click', function(e) {
-		$(window).off('beforeunload');
-	});
+	window.onload = function () {
+    if (typeof history.pushState === "function") {
+        history.pushState("jibberish", null, null);
+        window.onpopstate = function () {
+            history.pushState('newjibberish', null, null);
+            // Handle the back (or forward) buttons here
+            // Will NOT handle refresh, use onbeforeunload for this.
+        	alert("Please cancel this action");
+        };
+    }
+	}
 </script>
 <style>
 	#center {
