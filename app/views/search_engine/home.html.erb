@@ -1,7 +1,7 @@
 <div class="center jumbotron" id="center">
 <h1>BallotBot</h1>
 </div>
-<div id="form" class="allow-nav">
+<div id="form">
 <%= form_tag("/search", method: "get") do %>
 	<%= label_tag(:q, "Enter your search: ") %>
 	<%= text_field_tag(:q) %>
@@ -9,17 +9,14 @@
 <% end %>
 </div>
 <script type="text/javascript">
-	window.onload = function () {
-    if (typeof history.pushState === "function") {
-        history.pushState("jibberish", null, null);
-        window.onpopstate = function () {
-            history.pushState('newjibberish', null, null);
-            // Handle the back (or forward) buttons here
-            // Will NOT handle refresh, use onbeforeunload for this.
-        	alert("Please cancel this action");
-        };
-    }
-	}
+	jQuery(document).ready(function($) {
+  		if (window.history && window.history.pushState) {
+   			window.history.pushState('forward', null, './#forward');
+    		$(window).on('popstate', function() {
+      			alert('Back button was pressed.');
+    		});
+  		}
+	});
 </script>
 <style>
 	#center {
