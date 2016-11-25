@@ -8,6 +8,9 @@
 	<%= submit_tag("Search") %>
 <% end %>
 </div>
+<script type="text/javascript">
+	window.onbeforeunload = function() { return "Please cancel this action."; }
+</script>
 <style>
 	#center {
 		background: rgb(255, 153, 0);

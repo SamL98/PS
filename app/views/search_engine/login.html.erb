@@ -2,7 +2,7 @@
 <h1>BallotBot</h1>
 </div>
 <div id="form">
-<%= form_tag("/home", method: "get") do %>
+<%= form_tag("/home", method: "get", validates: true) do %>
 	<%= label_tag(:subj, "Enter subject identifier: ") %>
 	<%= text_field_tag(:subj) %>
 	<p></p>
@@ -33,3 +33,10 @@
 		margin-top: 25px;
 	}
 </style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		(document).on("click", "#submit", function() {
+			Turbolinks.visit("/home", {action: "replace"});
+		});
+	});
+</script>
