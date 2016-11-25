@@ -9,7 +9,11 @@
 <% end %>
 </div>
 <script type="text/javascript">
-	window.onbeforeunload = function() { return "Please cancel this action."; }
+	$(function() {
+		$(window).on('popstate', function() {
+			alert("Please cancel this action.");
+		});
+	});
 </script>
 <style>
 	#center {
