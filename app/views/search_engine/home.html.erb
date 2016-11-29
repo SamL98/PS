@@ -11,18 +11,16 @@
 </div>
 </body>
 <script type="text/javascript">
-	$(function() {
-		console.log(window.location.href);
-		if($('body').is('.homeType')) {
+	/*$(function() {
 		if (window.history && window.history.pushState) {
-    		window.history.pushState('', null, './');
-    		$(window).on('popstate', function() {
-        		//alert('Please cancel this action.');
-        		window.location.href = '/home';
-    		});
+			window.history.pushState('', null, './');
+			$(window).on('popstate', function() {
+				var subj = <%= @identifier %>;
+				var cond = <%= @condition %>;
+				window.location = '/home?utf8=%E2%9C%93&subj=' + subj + '&cond=' + cond + '&commit=Login';
+			});
 		}
-	}
-	});
+	});*/
 </script>
 <style>
 	#center {

@@ -25,6 +25,8 @@ class SearchEngineController < ApplicationController
 		@articles = Article.all
 		session[:subj_id] = subject.id
 		session[:condition] = subject.condition
+		@identifier = subject.identifier
+		@condition = session[:condition]
 	end
 
 	def search
@@ -35,17 +37,12 @@ class SearchEngineController < ApplicationController
 			candidate = filter_search(query)
 		end
 
+		@session = session
 		@articles = Article.where("candidate = ? AND condition = ?", candidate, session[:condition])
-
-		#all_articles.each do |article|
-		#	if article.candidate == candidate && article.condition == session[:condition]
-		#		@articles << article
-		#	end
-		#end
 
 		i = 1
 		if(@articles.length > 0)
-			@articles.shuffle!
+			@articles = @articles.shuffle
 			@articles.each do |art|
 				art.update_attribute(:rand_index, i)
 				i+= 1
