@@ -1,15 +1,20 @@
+<body class="searchType">
 <% @articles.each do |article| %>
 	<h2><%= link_to "#{article.title}", title_path(article.index), {class: "link"} %></h2>
 	<p><%= article.text[0..article.text.index('.')] + "..." %></p>
 <% end %>
+</body>
 <script type="text/javascript">
+	console.log(window.location.href);
 	var start = Date.now();
 	$('a').click(function(){
 		index = 0
+		if($('body').is('.searchType')) {
 		$.post('/log', {article: {index: index, rand_index: 0, time_spent: Date.now()-start}},
 			function(response) {
 				console.log(response);
 		});
+	}
 	});
 </script>
 <style>

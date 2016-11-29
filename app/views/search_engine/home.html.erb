@@ -1,3 +1,4 @@
+<body class="homeType">
 <div class="center jumbotron" id="center">
 <h1>BallotBot</h1>
 </div>
@@ -8,15 +9,19 @@
 	<%= submit_tag("Search") %>
 <% end %>
 </div>
+</body>
 <script type="text/javascript">
 	$(function() {
+		console.log(window.location.href);
+		if($('body').is('.homeType')) {
 		if (window.history && window.history.pushState) {
     		window.history.pushState('', null, './');
     		$(window).on('popstate', function() {
-        		alert('Please cancel this action.');
-        		document.location.href = '/submit';
+        		//alert('Please cancel this action.');
+        		window.location.href = '/home';
     		});
 		}
+	}
 	});
 </script>
 <style>

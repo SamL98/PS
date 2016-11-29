@@ -1,5 +1,7 @@
+<body class="showType">
 <h1><%= @article.title %></h1>
 <p><%= @article.text %></p>
+</body>
 <style>
 	h1 {
 		text-align: center;
@@ -15,16 +17,19 @@
 	}
 </style>
 <script type="text/javascript">
+	console.log(window.location);
 	var start;
 	$(function() {
 		start = Date.now();
 		$(window).on('popstate', function() {
-			index = <%= @article.index %>
-			rand_index = <%= @article.rand_index %>
-			$.post('/log', {article: {index: index, rand_index: rand_index, time_spent: Date.now()-start}},
-				function(response) {
-					console.log(response);
-				});
+			if($('body').is('.showType')) {
+				index = <%= @article.index %>
+				rand_index = <%= @article.rand_index %>
+				$.post('/log', {article: {index: index, rand_index: rand_index, time_spent: Date.now()-start}},
+					function(response) {
+						console.log(response);
+					});
+			}
 		});
 	});
 </script>

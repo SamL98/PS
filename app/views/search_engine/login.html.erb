@@ -34,8 +34,8 @@
 	}
 </style>
 <script type="text/javascript">
-	$(document).ready(function() {
-		(document).on("click", "#submit", function() {
+	$(window).ready(function() {
+		$('#submit').click(function() {
 			Turbolinks.visit("/home", {action: "replace"});
 		});
 	});

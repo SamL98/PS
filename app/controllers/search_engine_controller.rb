@@ -29,22 +29,27 @@ class SearchEngineController < ApplicationController
 
 	def search
 		query = params[:q]
-		candidate = filter_search(query)
 
-		all_articles = Article.all
-		@articles = []
-
-		all_articles.each do |article|
-			if article.candidate == candidate && article.condition == session[:condition]
-				@articles << article
-			end
+		candidate = ""
+		if(query != "")
+			candidate = filter_search(query)
 		end
 
+		@articles = Article.where("candidate = ? AND condition = ?", candidate, session[:condition])
+
+		#all_articles.each do |article|
+		#	if article.candidate == candidate && article.condition == session[:condition]
+		#		@articles << article
+		#	end
+		#end
+
 		i = 1
-		@articles.shuffle!
-		@articles.each do |art|
-			art.update_attribute(:rand_index, i)
-			i+= 1
+		if(@articles.length > 0)
+			@articles.shuffle!
+			@articles.each do |art|
+				art.update_attribute(:rand_index, i)
+				i+= 1
+			end
 		end
 	end
 
