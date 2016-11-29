@@ -23,9 +23,10 @@
 		start = Date.now();
 		$(window).on('popstate', function() {
 			if($('body').is('.showType')) {
+				id = <%= @subj_id %>
 				index = <%= @article.index %>
 				rand_index = <%= @article.rand_index %>
-				$.post('/log', {article: {index: index, rand_index: rand_index, time_spent: Date.now()-start}},
+				$.post('/log', {subj_id: id, article: {index: index, rand_index: rand_index, time_spent: Date.now()-start}},
 					function(response) {
 						console.log(response);
 					});

@@ -6,22 +6,12 @@
 <%= form_tag("/search", method: "get") do %>
 	<%= label_tag(:q, "Enter your search: ") %>
 	<%= text_field_tag(:q) %>
+	<%= hidden_field_tag(:subj_id, @subj_id) %>
+	<%= hidden_field_tag(:c, @condition) %>
 	<%= submit_tag("Search") %>
 <% end %>
 </div>
 </body>
-<script type="text/javascript">
-	/*$(function() {
-		if (window.history && window.history.pushState) {
-			window.history.pushState('', null, './');
-			$(window).on('popstate', function() {
-				var subj = <%= @identifier %>;
-				var cond = <%= @condition %>;
-				window.location = '/home?utf8=%E2%9C%93&subj=' + subj + '&cond=' + cond + '&commit=Login';
-			});
-		}
-	});*/
-</script>
 <style>
 	#center {
 		background: rgb(255, 153, 0);

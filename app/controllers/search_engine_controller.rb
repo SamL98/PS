@@ -23,22 +23,21 @@ class SearchEngineController < ApplicationController
 		end
 
 		@articles = Article.all
-		session[:subj_id] = subject.id
-		session[:condition] = subject.condition
-		@identifier = subject.identifier
-		@condition = session[:condition]
+		@subj_id = subject.id
+		@condition = subject.condition
 	end
 
 	def search
 		query = params[:q]
+		condition = params[:c]
+		@subj_id = params[:subj_id].to_i
 
 		candidate = ""
 		if(query != "")
 			candidate = filter_search(query)
 		end
 
-		@session = session
-		@articles = Article.where("candidate = ? AND condition = ?", candidate, session[:condition])
+		@articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
 
 		i = 1
 		if(@articles.length > 0)
@@ -52,6 +51,7 @@ class SearchEngineController < ApplicationController
 
 	def show
 		id = params[:id].to_i
+		@subj_id = params[:subj_id].to_i
 		articles = Article.all
 		articles.each do |article|
 			if article.index == id
@@ -61,7 +61,7 @@ class SearchEngineController < ApplicationController
 	end
 
 	def log
-		id = session[:subj_id].to_i
+		id = params[:subj_id].to_i
 		subject = Subject.find(id)
 		@visit = subject.visits.create(visit_params)
 		@visit.save
