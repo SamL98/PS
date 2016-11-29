@@ -1,2 +1,0 @@
-class SessionHash < ApplicationRecord
-end
