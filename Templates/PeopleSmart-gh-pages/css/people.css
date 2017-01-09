@@ -1,0 +1,109 @@
+body {
+  margin:0;
+  padding:0;
+}
+
+#top {
+  width:100%;
+  border-bottom:1px solid lightgray;
+  height:50px;
+  margin:auto;
+  top:0;
+  position:fixed;
+  z-index:1;
+  background-color:white;
+}
+
+
+#title {
+  line-height:50px;
+  font-size:30px;
+  margin:auto;
+  text-align:left;
+  font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+  color:purple;
+  margin-left:5px;
+}
+
+#prompt {
+  margin-top:60px;
+  font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;
+  font-size:25px;
+  text-align:center;
+  margin-bottom:50px;
+}
+
+#container {
+  background-color:whitesmoke;
+  width:90%;
+  margin:auto;
+  margin-top:20px;
+  border-radius:3px;
+  padding:15px;
+  -webkit-box-shadow: 0px 0px 16px 3px rgba(148,148,148,1);
+  -moz-box-shadow: 0px 0px 16px 3px rgba(148,148,148,1);
+  box-shadow: 0px 0px 16px 3px rgba(148,148,148,1);
+}
+
+#check1 {
+  background-color:white;
+  width:95%;
+  margin:auto;
+  padding:5px;
+  border-radius:3px;
+  border:1px solid grey;
+  text-align:center;
+}
+
+#check2 {
+  background-color:white;
+  width:95%;
+  margin:auto;
+  margin-top:15px;
+  padding:5px;
+  border-radius:3px;
+  border:1px solid grey;
+  text-align:center;
+}
+
+.text {
+  font-family: "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+}
+
+#ps{
+  margin:0;
+  color:MediumPurple;
+  font-size:19px;
+  margin-bottom:5px;
+}
+
+#info {
+  color:grey;
+  margin:0;
+  padding:0;
+  wdith:200px;
+}
+
+#pss {
+  margin:0;
+  color:grey;
+  font-size:15px;
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+}
+
+#num {
+  margin-top:5px;
+  margin-bottom:20px;
+  float:top;
+}
+
+#hey {
+  width:200px;
+  margin:auto;
+  margin-bottom:30px;
+}

@@ -7,7 +7,9 @@
 	<%= text_field_tag(:subj) %>
 	<p></p>
 	<%= label_tag(:cond, "Enter testing condition: ") %>
+	<%= label_tag(:cond_1, "1") %>
 	<%= radio_button_tag(:cond, "1") %>
+	<%= label_tag(:cond_2, "2") %>
 	<%= radio_button_tag(:cond, "2") %>
 	<p></p>
 	<div id="submit">
@@ -16,8 +18,8 @@
 <% end %>
 </div>
 <script type="text/javascript">
-	$("#submit").click(function() {
-		window.close();
+	$(window).on('beforeunload', function() {
+		window.close('/');
 	});
 </script>
 <style>
@@ -26,13 +28,11 @@
 		color: #FFFFFF;
 		font-size: 50px;
 	}
-	h1 {
-		margin-left: 100px;
-	}
 	#form {
 		margin-left: 75px;
 		font-size: 25px;
 		color: gray;
+		float: left;
 	}
 	#submit {
 		margin-top: 25px;

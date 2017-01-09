@@ -3,13 +3,13 @@ class SearchEngineController < ApplicationController
 	end
 
 	def home
-		subj_id = params[:subj]
-		condition = params[:cond]
+		@subj_id = params[:subj]
+		@condition = params[:cond]
 
 		existing_id = 0
 
 		Subject.all.each do |subj|
-			if subj.identifier == subj_id
+			if subj.identifier == @subj_id
 				existing_id = subj.id
 				break
 			end
@@ -18,19 +18,18 @@ class SearchEngineController < ApplicationController
 		if existing_id != 0
 			subject = Subject.find(existing_id)
 		else
-			subject = Subject.new({identifier: subj_id, condition: condition})
+			subject = Subject.new({identifier: @subj_id, condition: @condition})
 			subject.save
 		end
 
 		@articles = Article.all
-		@subj_id = subject.id
-		@condition = subject.condition
 	end
 
 	def search
 		query = params[:q]
 		condition = params[:c]
-		@subj_id = params[:subj_id].to_i
+		@subj_id = params[:subj_id].to_s
+		@cond = condition
 
 		candidate = ""
 		if(query != "")
@@ -51,18 +50,19 @@ class SearchEngineController < ApplicationController
 
 	def show
 		id = params[:id].to_i
-		@subj_id = params[:subj_id].to_i
+		condition = params[:cond].to_i
+		@subj_id = params[:subj_id].to_s
 		articles = Article.all
 		articles.each do |article|
-			if article.index == id
+			if article.index == id && article.condition == condition
 				@article = article
 			end
 		end
 	end
 
 	def log
-		id = params[:subj_id].to_i
-		subject = Subject.find(id)
+		identifier = params["subj_id"]
+		subject = Subject.where("identifier = ?", identifier)
 		@visit = subject.visits.create(visit_params)
 		@visit.save
 	end

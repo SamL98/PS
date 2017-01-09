@@ -1,0 +1,66 @@
+#main {
+  margin-top:125px;
+  margin-right:50px;
+  margin-left:50px;
+}
+
+
+#title {
+  font-size:40px;
+  margin-bottom:30px;
+  text-align:left;
+  color:black;
+}
+
+#reporter{
+  text-align:left;
+  color:darkgray;
+  font-family: font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+#date{
+  text-align:left;
+  color:darkgray;
+  font-family: font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size:12px;
+}
+
+
+#main2{
+  margin-right:50px;
+  margin-left:50px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:5px;
+  padding-bottom:5px;
+  -webkit-box-shadow: 0px 0px 10px 7px lightgray;
+  -moz-box-shadow: 0px 0px 10px 7px lightgray;
+  box-shadow: 0px 0px 10px 7px lightgray;
+  background-color:white;
+}
+
+.text{
+  font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+  line-height:20px;
+  letter-spacing:.5px;
+  font-size:17px;
+}
+
+#bottom2 {
+  height:5px;
+  width:100%;
+  
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+  .text{
+    font-size:25px;
+    line-height:2.0;
+  }
+  #main2{
+    line-height:2.0;
+  }
+}

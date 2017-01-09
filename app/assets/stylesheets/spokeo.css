@@ -1,0 +1,135 @@
+body {
+  margin:0;
+  padding:0;
+}
+
+#top {
+  width:100%;
+  border-bottom:1px solid lightgray;
+  height:50px;
+  margin:auto;
+  top:0;
+  position:fixed;
+  z-index:1;
+  background-color:white;
+}
+
+#picont{
+  width:200px;
+  margin:auto;
+}
+
+#pic{
+  width:200px;
+  height:200px;
+}
+
+#title {
+  line-height:50px;
+  font-size:40px;
+  margin-top:auto;
+  text-align:center;
+  font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
+  color:green;
+  margin-top:5px;
+}
+
+#prompt {
+  margin-top:100px;
+  font-family: "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;
+  font-size:25px;
+  text-align:center;
+}
+
+#container {
+  background-color:whitesmoke;
+  width:90%;
+  margin:auto;
+  margin-top:20px;
+  border-radius:3px;
+  padding:15px;
+  margin-bottom:10px;
+}
+
+#check1 {
+  background-color:lightgray;
+  width:95%;
+  height:75px;
+  margin:auto;
+  padding:5px;
+  border-radius:3px;
+  
+}
+
+#check2 {
+  background-color:lightgray;
+  width:95%;
+  height:75px;
+  margin:auto;
+  margin-top:15px;
+  padding:5px;
+  border-radius:3px;
+}
+
+#check3 {
+  background-color:lightgray;
+  width:95%;
+  height:75px;
+  margin:auto;
+  margin-top:15px;
+  padding:5px;
+  border-radius:3px;
+}
+
+#check4 {
+  background-color:lightgray;
+  width:95%;
+  height:75px;
+  margin:auto;
+  margin-top:15px;
+  padding:5px;
+  border-radius:3px;
+}
+
+#check5 {
+  background-color:lightgray;
+  width:95%;
+  height:75px;
+  margin:auto;
+  margin-top:15px;
+  padding:5px;
+  border-radius:3px;
+}
+
+#check6 {
+  background-color:lightgray;
+  width:95%;
+  height:75px;
+  margin:auto;
+  margin-top:15px;
+  padding:5px;
+  border-radius:3px;
+}
+
+.text {
+  font-family: font-family: "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+}
+
+#ps{
+  margin:0;
+  color:green;
+  font-size:19px;
+  margin-bottom:5px;
+}
+
+#pss {
+  margin:0;
+  color:grey;
+  font-size:15px;
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+}

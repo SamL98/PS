@@ -1,6 +1,6 @@
 <body class="searchType">
 <% @articles.each do |article| %>
-	<h2><%= link_to "#{article.title}", title_path(article.index, subj_id: @subj_id), {class: "link"} %></h2>
+	<h2><%= link_to "#{article.title}", title_path(article.index, rand_index: article.rand_index, subj_id: @subj_id, cond: @cond), {class: "link"} %></h2>
 	<p><%= article.text[0..article.text.index('.')] + "..." %></p>
 <% end %>
 </body>
@@ -8,13 +8,13 @@
 	console.log(window.location.href);
 	var start = Date.now();
 	$('a').click(function(){
-		if($('body').is('.searchType')) {
+		//if($('body').is('.searchType')) {
 			id = <%= @subj_id %>
 			$.post('/log', {subj_id: id, article: {index: 0, rand_index: 0, time_spent: Date.now()-start}},
 				function(response) {
 				console.log(response);
 			});
-	}
+	});
 </script>
 <style>
 .link, .link:hover, .link:focus {

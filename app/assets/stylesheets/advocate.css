@@ -1,0 +1,112 @@
+body{
+  background-color:white;
+}
+
+
+#Top {
+  background-color:whitesmoke;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  margin-bottom:15px;
+  z-index:1;
+  height:90px;
+  margin:auto;
+}
+
+#bottom {
+  background-color:lightgray;
+  height:10px;
+  width:100;
+  border-top:solid 1px grey;
+  border-bottom:solid 1px grey;
+}
+
+#toptop {
+  background-color:black;
+  height:25px;
+  width:100;
+  top:0;
+}
+
+#logowrite{
+  color:black;
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  font-size:25px;
+  line-height:0px;
+  margin-bottom:17px;
+  text-align:center;
+  transform: scale(1,1.5);
+  -webkit-transform:scale(1,1.5); /* Safari and Chrome */
+  -moz-transform:scale(1,1.5); /* Firefox */
+  -ms-transform:scale(1,1.5); /* IE 9+ */
+}
+
+#main {
+  margin-top:125px;
+  margin-right:50px;
+  margin-left:50px;
+}
+
+#motto{
+  text-align:center;
+  color:black;
+  font-size:12px;
+  margin-bottom:5px;
+  margin-top:5px;
+}
+
+#title {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size:50px;
+  margin-bottom:30px;
+  text-align:center;
+}
+
+#reporter{
+  text-align:center;
+  color:grey;
+  font-family: font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+#date{
+  text-align:center;
+  color:grey;
+  font-family: font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size:12px;
+}
+
+
+#main2{
+  margin-right:50px;
+  margin-left:50px;
+  border-bottom:dashed black 1px;
+}
+
+.text{
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  line-height:20px;
+  letter-spacing:.5px;
+  font-size:17px;
+}
+
+#bottom2 {
+  height:5px;
+  width:100%;
+  border-top:dashed 1px black;
+  
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+  .text{
+    font-size:25px;
+    line-height:2.0;
+  }
+  #main2{
+    line-height:2.0;
+  }
+}

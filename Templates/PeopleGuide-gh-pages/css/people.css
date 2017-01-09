@@ -1,0 +1,72 @@
+body {
+  margin:0;
+  padding:0;
+}
+
+#top{
+  background-color:#333333;
+  height:40px;
+  width:100%;
+  top:0;
+}
+
+#logo {
+  font-variant:small-caps;
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  color:white;
+  line-height:40px;
+  margin-top:0;
+  margin-bottom:0;
+  font-size:30px;
+  text-align:center;
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+}
+
+.text {
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+}
+
+#name {
+  margin-top:0;
+  font-size:60px;
+  line-height:120px;
+  color:white;
+  text-align:center;
+}
+
+#top2 {
+  background-image: url("https://t3.ftcdn.net/jpg/01/09/08/46/240_F_109084610_byc342qf5LGcAPIQEtUAEX7FVcedFCJg.jpg");
+  height:120px;
+}
+
+#pic {
+  border:solid lightgray 1px;
+  margin:auto;
+  text-align:center;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+#propic {
+  margin:auto;
+  padding:0;
+  margin-right:0;
+}
+
+#hey {
+  font-size:25px;
+  text-align:center;
+}
+
+#copy {
+  color:lightgray;
+  text-align:center;
+  font-size:13px;
+  margin-bottom:10px;
+  
+}

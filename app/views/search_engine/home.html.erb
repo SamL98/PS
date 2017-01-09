@@ -1,6 +1,24 @@
+<head>
+	<title>Sagamore</title>
+</head>
 <body class="homeType">
-<div class="center jumbotron" id="center">
-<h1>BallotBot</h1>
+	<div id="Label"></div>
+	<div id="front">
+		<div id="logo">
+			<img src="https://rawgit.com/michaelgrotton/SearchEngine/gh-pages/Search_logo.png" style="width:350px;height:275px"></img>
+		</div>
+		<div id="search_bar">
+			<%= form_tag("/search", method: "get") do %>
+				<%= text_field_tag(:q) %>
+				<%= hidden_field_tag(:subj_id, @subj_id) %>
+				<%= hidden_field_tag(:c, @condition) %>
+				<%= submit_tag("Search") %>
+			<% end %>
+		</div>
+	</div>
+</body>
+<!--<div class="center jumbotron" id="center">-->
+<!--<h1>BallotBot</h1>
 </div>
 <div id="form">
 <%= form_tag("/search", method: "get") do %>
@@ -11,24 +29,87 @@
 	<%= submit_tag("Search") %>
 <% end %>
 </div>
-</body>
+</body>-->
 <style>
-	#center {
-		background: rgb(255, 153, 0);
-		color: #FFFFFF;
-		font-size: 50px;
-	}
-	h1 {
-		margin-left: 100px;
-	}
-	#form {
-		font-size: 25px;
-		color: gray;
-		margin-left: 75px;
-	}
-	input {
-		margin-left: 15px;
-		margin-right: 15px;
-		border-radius: 10px;
-	}
+	body {
+  background-image: url("http://www.photos-public-domain.com/wp-content/uploads/2011/03/white-linen-paper-texture.jpg");
+  background-size: cover;
+  width:100%;
+  height:100%;
+}
+
+#front {
+  text-align:center;
+  width:900px;
+  height:500px;
+  background-color:white;
+  margin:auto;
+  margin-top: 75px;
+  border-radius:5px;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(173,173,173,1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(173,173,173,1);
+  box-shadow: 0px 0px 10px 5px rgba(173,173,173,1);
+}
+
+#Label {
+  background-color:black;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  margin-top:0;
+  margin-left:0;
+  margin-bottom:15px;
+  height:40px;
+  z-index:1;
+}
+
+#logo {
+  display:inline-block;
+  margin-top:25px;
+  margin-bottom:0px;
+}
+
+#search_bar {
+  border-color:lightgray;
+  margin:auto;
+  margin-top:0px;
+  width:50%;
+  height:46px;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(173,173,173,1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(173,173,173,1);
+  box-shadow: 0px 0px 10px 5px rgba(173,173,173,1);
+}
+
+#search_button {
+  float:right;
+  height:40px;
+  width:20%;
+  margin:auto;
+  margin-right:5px;
+  margin-top:3px;
+  border-radius:5px;
+  background-color:limegreen;
+  
+}
+
+#search_text {
+  color:black;
+  margin:auto;
+  margin-top:10px;
+}
+
+form input[type=text] {
+	width: 80%;
+	margin-right: 10px;
+}
+
+form input[type=submit] {
+	background-color: limegreen;
+}
+
+form input[type=text], form input[type=submit] {
+	margin-top: 10px;
+}
+
 </style>

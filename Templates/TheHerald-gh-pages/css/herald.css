@@ -1,0 +1,98 @@
+body{
+  background-color:whitesmoke;
+}
+
+
+#Top {
+  background-color:black;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  margin-bottom:15px;
+  z-index:1;
+  height:70px;
+  margin:auto;
+  -webkit-box-shadow: 0px 0px 10px 7px grey;
+  -moz-box-shadow: 0px 0px 10px 7px grey;
+  box-shadow: 0px 0px 10px 7px grey;
+}
+
+
+#logowrite{
+  color:white;
+  font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-size:25px;
+  line-height:0px;
+  margin-bottom:17px;
+  text-align:center;
+}
+
+#main {
+  margin-top:125px;
+  margin-right:50px;
+  margin-left:50px;
+}
+
+#motto{
+  text-align:center;
+  color:white;
+  font-size:12px;
+  margin-bottom:5px;
+  margin-top:5px;
+}
+
+#title {
+  font-size:40px;
+  margin-bottom:30px;
+  text-align:left;
+}
+
+#reporter{
+  text-align:left;
+  color:grey;
+  font-family: font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+#date{
+  text-align:left;
+  color:grey;
+  font-family: font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size:12px;
+}
+
+
+#main2{
+  margin-right:50px;
+  margin-left:50px;
+  border-left:dashed grey 1px;
+  border-right:dashed grey 1px;
+  padding-left:20px;
+  padding-right:20px;
+  
+}
+
+.text{
+  font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+  line-height:20px;
+  letter-spacing:.5px;
+  font-size:17px;
+}
+
+#bottom2 {
+  height:5px;
+  width:100%; 
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+  .text{
+    font-size:25px;
+    line-height:2.0;
+  }
+  #main2{
+    line-height:2.0;
+  }
+}

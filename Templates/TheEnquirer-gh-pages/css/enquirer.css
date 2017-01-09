@@ -1,0 +1,72 @@
+body {
+  width:100%;
+  height:100%;
+  background-color:whitesmoke;
+  text-align:center;
+  
+}
+
+#header {
+  margin:auto;
+  display:inline-block;
+}
+
+#divider{
+  margin-top:15px;
+  width:100%;
+  height:10px;
+  background-color:lightgray;
+  margin-left:0;
+  margin-right:0;
+  margin-bottom:15px;
+}
+
+.letters {
+  font-family:Baskerville,"Baskerville Old Face";
+}
+
+#author {
+  margin:auto;
+  margin-bottom:15px;
+  width:10%;
+  border-top:2px solid black;
+  border-bottom:2px solid black;
+  
+}
+
+#name, #title {
+  line-height:0px;
+}
+
+#article {
+  margin-top:50px;
+  margin-bottom:25px;
+  text-align:center;
+}
+
+#titlefont{
+  font-family:"Sans-serif", Candara;
+  font-size:50px;
+}
+
+#writing{
+  border-radius:5px;
+  width:60%;
+  margin:auto;
+  background-color:white;
+  padding:15px;
+  text-align:left;
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+  .letters{
+    font-size:25px;
+    line-height:2.0;
+  }
+  #main2{
+    line-height:2.0;
+  }
+}
