@@ -26,10 +26,12 @@ class SearchEngineController < ApplicationController
 	end
 
 	def search
-		query = params[:q]
-		condition = params[:c]
+		query = params[:q].to_s
+		condition = params[:c].to_i
 		@subj_id = params[:subj_id].to_s
 		@cond = condition
+
+		gon.subjId = @subj_id
 
 		candidate = ""
 		if(query != "")
@@ -52,17 +54,49 @@ class SearchEngineController < ApplicationController
 		id = params[:id].to_i
 		condition = params[:cond].to_i
 		@subj_id = params[:subj_id].to_s
+		gon.subjId = @subj_id
+
 		articles = Article.all
 		articles.each do |article|
 			if article.index == id && article.condition == condition
 				@article = article
 			end
 		end
+
+		gon.index = @article.index
+		gon.randIndex = @article.rand_index
+
+		template_names = [
+			'intelius',
+			'PeopleFinder',
+			'PeopleGuide',
+			'PeopleSmart',
+			'spokeo',
+			'TheAdvocate',
+			'TheBusinessJournal',
+			'TheEnquirer',
+			'TheGazette',
+			'TheHerald',
+			'TheReview',
+			'TheTribute',
+			'TheUnionTimes',
+			'Whitepages',
+			'zoominfo'
+		]
+
+		template_id = @article.template
+		if template_id > 0
+			full_path = Rails.root.join('app', 'assets', 'Templates', template_names[template_id] + '-gh-pages', 'index.html').to_s
+			file = File.open(full_path, 'rb')
+			@content = file.read
+			file.close
+		end
 	end
 
 	def log
 		identifier = params["subj_id"]
-		subject = Subject.where("identifier = ?", identifier)
+		puts 'LOGGING VISIT FOR ' + identifier.upcase
+		subject = Subject.where("identifier = ?", identifier).first
 		@visit = subject.visits.create(visit_params)
 		@visit.save
 	end

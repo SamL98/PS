@@ -1,0 +1,13 @@
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/json-2.0.2/ext/json
+/Users/SamLerner/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20170111-2117-2p1ihx.rb extconf.rb
+creating Makefile
+
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/json-2.0.2/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/json-2.0.2/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/SamLerner/Documents/Googol/vendor/bundle/gems/json-2.0.2/ext/json
+make "DESTDIR=" install
