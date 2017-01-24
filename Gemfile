@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'execjs'
+gem 'therubyracer'
 gem 'listen', '~> 3.0.5'
 
 # Use Capistrano for deployment
