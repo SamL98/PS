@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+config.secret_key_base = '<%= ENV["SECRET_KEY_BASE"] %>'
 
 module Googol
   class Application < Rails::Application
