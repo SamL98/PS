@@ -170,6 +170,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
+  execjs
   gon
   jbuilder (~> 2.5)
   jquery-rails
