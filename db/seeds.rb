@@ -20,7 +20,7 @@ articles = [
 i = 1
 rand_i = 0
 articles.each do |article|
-	Article.create(candidate: "Patrick J. Fischer", title: article[0], text: article[1], index: i, rand_index: rand_i, condition: 1, template: i)
+	Article.create(candidate: "Patrick J. Fischer", title: article[0], text: article[1], index: i, rand_index: rand_i, condition: "M1", template: i)
 	i += 1
 end
 
@@ -38,7 +38,7 @@ new_articles = [
 			]
 
 new_articles.each do |new_article|
-	Article.create(candidate: "Michael J. Holbrook", title: new_article[0], text: new_article[1], index: i, rand_index: rand_i, condition: 1, template: -1)
+	Article.create(candidate: "Michael J. Holbrook", title: new_article[0], text: new_article[1], index: i, rand_index: rand_i, condition: "L1", template: -1)
 	i += 1
 end
 
@@ -56,7 +56,7 @@ articles2 = [
 ]
 
 articles2.each do |article2|
-	Article.create(candidate: "Michael J. Holbrook", title: article2[0], text: article2[1], index: i, rand_index: rand_i, condition: 2, template: -1)
+	Article.create(candidate: "Michael J. Holbrook", title: article2[0], text: article2[1], index: i, rand_index: rand_i, condition: "M2", template: -1)
 	i += 1
 end
 
@@ -74,6 +74,6 @@ new_articles2 = [
 ]
 
 new_articles2.each do |art|
-	Article.create(candidate: "Patrick J. Fischer", title: art[0], text: art[1], index: i, rand_index: rand_i, condition: 2, template: -1)
+	Article.create(candidate: "Patrick J. Fischer", title: art[0], text: art[1], index: i, rand_index: rand_i, condition: "L2", template: -1)
 	i += 1
 end

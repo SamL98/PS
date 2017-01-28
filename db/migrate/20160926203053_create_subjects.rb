@@ -2,7 +2,7 @@ class CreateSubjects < ActiveRecord::Migration[5.0]
   def change
     create_table :subjects do |t|
       t.string :identifier
-      t.integer :condition
+      t.string :condition
 
       t.timestamps
     end

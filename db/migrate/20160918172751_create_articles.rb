@@ -6,7 +6,7 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :text
       t.integer :index
       t.integer :rand_index
-      t.integer :condition
+      t.string :condition
       t.integer :template
 
       t.timestamps

@@ -16,8 +16,9 @@
 	var start = Date.now();
 	$('a').click(function(event){
 		var id = gon.subjId;
+		var condition = gon.cond;
 
-		$.post('/log', {subj_id: id, article: {index: 0, rand_index: 0, time_spent: Date.now()-start}},
+		$.post('/log', {subj_id: id, cond: condition, article: {index: 0, rand_index: 0, time_spent: Date.now()-start}},
 			function(response) {
 		});
 	});

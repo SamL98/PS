@@ -27,11 +27,12 @@ class SearchEngineController < ApplicationController
 
 	def search
 		query = params[:q].to_s
-		condition = params[:c].to_i
+		condition = params[:c].to_s
 		@subj_id = params[:subj_id].to_s
 		@cond = condition
 
 		gon.subjId = @subj_id
+		gon.cond = @cond
 
 		candidate = ""
 		if(query != "")
@@ -52,12 +53,12 @@ class SearchEngineController < ApplicationController
 
 	def show
 		id = params[:id].to_i
-		condition = params[:cond].to_i
+		condition = params[:cond].to_s
 		@subj_id = params[:subj_id].to_s
 		gon.subjId = @subj_id
+		gon.cond = condition
 
-		articles = Article.all
-		articles.each do |article|
+		Article.all.each do |article|
 			if article.index == id && article.condition == condition
 				@article = article
 			end
@@ -95,6 +96,8 @@ class SearchEngineController < ApplicationController
 
 	def log
 		identifier = params["subj_id"]
+		condition = params["condition"]
+
 		puts 'LOGGING VISIT FOR ' + identifier.upcase
 		subject = Subject.where("identifier = ?", identifier).first
 		@visit = subject.visits.create(visit_params)
