@@ -8,7 +8,14 @@
 	</div>
 	<% @articles.each do |article| %>
 		<h2><%= link_to "#{article.title}", title_path(article.index, rand_index: article.rand_index, subj_id: @subj_id, cond: @cond) %></h2>
-		<p><%= article.text[0..article.text.index('.')] + "..." %></p>
+		<p id="snippet"><%= article.text[0..article.text.index('.')] + "..." %></p>
+	<% end %>
+	<hr></hr>
+	<% if @page == 1 %>
+		<%= link_to 'Next page', search_path(2, p: 2, q: @query, c: @cond, subj_id: @subj_id), id: "nextPage" %>
+	<% end %>
+	<% if @page == 2 %>
+		<%= link_to 'Go back', search_path(1, p: 1, q: @query, c: @cond, subj_id: @subj_id), id: "goBack" %>
 	<% end %>
 </body>
 
@@ -28,14 +35,24 @@
 	h1 {
 		text-align: center;
 	}
-	h2, p {
+	h2, #snippet {
 		text-align: left;
 		margin-left: 30px;
 	}
-	p {
-		margin-left: 35px;
+	#snippet {
+		margin-left: 30px;
 	}
 	h2, h2:hover, h2:focus {
 		color: blue;
+	}
+	#nextPage {
+		float: right;
+		margin-bottom: 10px;
+		margin-right: 10px;
 	}	
+	#goBack {
+		float: left;
+		margin-bottom: 10px;
+		margin-left: 10px;
+	}
 </style>

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160926203053) do
     t.integer  "index"
     t.integer  "rand_index"
     t.string   "condition"
-    t.integer  "template"
+    t.string   "template"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

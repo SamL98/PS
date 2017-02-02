@@ -1,35 +1,4 @@
-<head>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
-<% case @article.template %>
-<% when -1 %>
-
-  <body>
-	 <h1><%= @article.title %></h1>
-	 <p><%= @article.text %></p>
-  </body>
-
-  <style>
-    h1 {
-      text-align: center;
-      font-size: 35px;
-      margin-bottom: 50px;
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-    p {
-      font-size: 20px;
-      margin-left: 25px;
-      margin-right: 25px;
-    }
-  </style>
-
-<% when 1...15 %>
-
-  <%= @content.html_safe %>
-
-<% end %>
+<%= @content.html_safe %>
 
 <script type="text/javascript">
 
@@ -52,5 +21,8 @@
     }
 
     document.addEventListener('turbolinks:before-cache', logVisit);
+
+    document.getElementById('title').innerHTML = gon.title
+    document.getElementById('content').innerHTML = gon.text
   });
 </script>

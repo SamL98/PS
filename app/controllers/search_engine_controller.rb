@@ -26,23 +26,44 @@ class SearchEngineController < ApplicationController
 	end
 
 	def search
+		page = params[:p].to_i
 		query = params[:q].to_s
 		condition = params[:c].to_s
 		@subj_id = params[:subj_id].to_s
 		@cond = condition
+		@query = query
 
 		gon.subjId = @subj_id
 		gon.cond = @cond
 
-		candidate = ""
-		if(query != "")
-			candidate = filter_search(query)
+		candidates = []
+		case condition
+		when 'M11'
+			candidates = ["James Walker", "Scott Taylor"]
+		when 'M12'
+			candidates = ["Steven Moore", "Thomas Clark"]
+		when 'L11'
+			candidates = ["Brian Miller", "Robert Harris"]
+		when 'L12'
+			candidates = ["Peter Brown", "Roger Lewis"]
 		end
 
+		candidate = ""
+		if query != ""
+			candidate = filter_search(candidates, query)
+		end
+		@cand = candidate
+
 		@articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
+		if page == 1
+			@articles = @articles[0..8]
+		else
+			@articles = @articles[8..16]
+		end
+		@page = page
 
 		i = 1
-		if(@articles.length > 0)
+		if @articles != nil && @articles.length > 0
 			@articles = @articles.shuffle
 			@articles.each do |art|
 				art.update_attribute(:rand_index, i)
@@ -64,34 +85,16 @@ class SearchEngineController < ApplicationController
 			end
 		end
 
+		gon.title = @article.title
+		gon.text = @article.text
 		gon.index = @article.index
 		gon.randIndex = @article.rand_index
 
-		template_names = [
-			'intelius',
-			'PeopleFinder',
-			'PeopleGuide',
-			'PeopleSmart',
-			'spokeo',
-			'TheAdvocate',
-			'TheBusinessJournal',
-			'TheEnquirer',
-			'TheGazette',
-			'TheHerald',
-			'TheReview',
-			'TheTribute',
-			'TheUnionTimes',
-			'Whitepages',
-			'zoominfo'
-		]
-
-		template_id = @article.template
-		if template_id > 0
-			full_path = Rails.root.join('app', 'assets', 'Templates', template_names[template_id] + '-gh-pages', 'index.html').to_s
-			file = File.open(full_path, 'rb')
-			@content = file.read
-			file.close
-		end
+		template = @article.template + "-gh-pages"
+		full_path = Rails.root.join('app', 'assets', 'Templates', template, 'index.html').to_s
+		file = File.open(full_path, 'r')
+		@content = file.read
+		file.close
 	end
 
 	def log
@@ -110,8 +113,7 @@ class SearchEngineController < ApplicationController
 		{index: visit["index"], rand_index: visit["rand_index"], time_spent: visit["time_spent"]}
 	end
 
-	def filter_search(query)
-		candidates = ["Patrick J. Fischer", "Michael J. Holbrook"]
+	def filter_search(candidates, query)
 		candidate = ""
 
 		search_terms = query.split(" ")

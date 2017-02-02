@@ -67,6 +67,7 @@ body{
   -moz-box-shadow: 0px 0px 10px 7px lightgray;
   box-shadow: 0px 0px 10px 7px lightgray;
   background-color:white;
+  border-radius:5px;
 }
 
 .text{

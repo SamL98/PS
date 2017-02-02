@@ -28,13 +28,13 @@ body {
 #author {
   margin:auto;
   margin-bottom:15px;
-  width:10%;
+  width:150px;
   border-top:2px solid black;
   border-bottom:2px solid black;
   
 }
 
-#name, #title {
+#name, #position {
   line-height:0px;
 }
 
@@ -44,27 +44,29 @@ body {
   text-align:center;
 }
 
-#titlefont{
+#title{
   font-family:"Sans-serif", Candara;
   font-size:50px;
 }
 
 #writing{
   border-radius:5px;
-  width:60%;
+  width:70%;
   margin:auto;
   background-color:white;
   padding:15px;
   text-align:left;
+  font-size:20px;
+  line-height:25px;
+  font-family:Baskerville,"Baskerville Old Face";
 }
 
 @media screen and (max-device-width: 480px){
   body{
     -webkit-text-size-adjust: none;
   }
-  .letters{
+  #writing{
     font-size:25px;
-    line-height:2.0;
   }
   #main2{
     line-height:2.0;

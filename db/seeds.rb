@@ -5,75 +5,110 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-articles = [
-			["Fischer gets GOP nomination for Ohio Supreme Court","Republican Pat Fischer, a judge on the state appeals court in Cincinnati, won his party's nomination for a seat on the Ohio Supreme Court today."],
-			["Pat Fischer in GOP primary for Ohio Supreme Court: endorsement editorial","Two appellate judges are vying for the Republican nomination for an Ohio Supreme Court seat, but it's an easy call: Judge Pat Fischer, of the Cincinnati-based 1st Ohio District Court of Appeals, is the clear choice over Judge Colleen Mary O'Toole, of Concord, of the Warren-based 11th Ohio District Court of Appeals."],
-			["Judge Patrick F. Fischer, P.J. - Hamilton County Court of Appeals Judges","Judge Fischer was elected to the Ohio First District Court of Appeals in November 2010. He was re-elected in 2012. Judge Fischer has dedicated himself to the practice of law for nearly 30 years. An honors graduate of Harvard Law School and Harvard College, he has been named to Best Lawyers in America®, one of the Top 50 Lawyers in Cincinnati, and one of the Top 100 Lawyers in Ohio. He was routinely named to Ohio Super Lawyers®. Judge Fischer was elected President of the Ohio State Bar Association, and served as same from 2012-2013."],
-			["Pat Fischer – Redskins","Joined the NFL as the 17th-round draft choice of St. Louis in 1961 out of the University of Nebraska... Signed with Washington as a free agent in 1968... 1969 Pro Bowler... Helped lead the Redskins to Super Bowl VII in 1972... Finished 17-year career with 56 interceptions... Ranked seventh all-time in Redskins career interceptions with 27 and fourth all-time with 412 career interception return yards."],
-			["Whatever happened to ... Pat Fischer","If you were to look at him in civilian clothes you would not have thought he was a professional football player. He stood only 5-feet, 8-inches tall and weighed 170 pounds. Not too many people thought he would make it in the National Football League including himself when he was drafted by the St. Louis Cardinals in the 17th round of the NFL draft in 1961. But he was also selected by the then Dallas Texans (later to be the Kansas City Chiefs) in the AFL draft."],
-			["Republican foes battle in rare contest for Ohio Supreme Court nomination","COLUMBUS — There have been frequent battles on the Democratic side, but rarely has the Republican nomination for an Ohio Supreme Court seat been contested. This year, Cincinnati appellate Judge Pat Fischer, the state Republican Party’s endorsed candidate for one of three seats on the ballot, faces a challenge from northeast Ohio Judge Colleen Mary O’Toole."],
-			["The Soul Of The Game: Pat Fischer","In the long history of the NFL there have been players who defined their positions because of their physicality. Men like Dick Butkus, Dick “Night Train” Lane, and Lawrence Taylor were freaks at their position. They were bigger than what other teams were geared to deal with normally. Yet there are those that stand out as hitters first although their size would suggest something different. Enter Pat Fischer."],
-			["Scot McCloughan’s dad, Pat Fischer, and the birth of bump-and-run coverage","Kent McCloughan’s most obvious link to the Redskins is well-known: the father of Washington’s new general manager was a third-round Redskins draft pick in 1965, although he never played for the team. And yet that doesn’t completely explain the frequency with which McCloughan’s name was mentioned in Washington newspaper copy. Because Kent McCloughan was also part of an esoteric NFL history debate, a debate starring Hall of Fame cornerback Willie Brown and Washington fan favorite Pat Fischer."],
-			["Finance - Pat Fischer Nissan | New Nissan dealership", "Welcome to Pat Fischer Nissan's Finance Department, your auto loan and car lease resource. We're eager to provide financing for your new car, or we can assist in used car financing. Check out our online car loan calculator for an instant car loan rate. Then, proceed to our online finance application."],
-			["Cincinnati judge becomes OSBA president", "The Ohio State Bar Association president’s gavel was ceremoniously passed to Judge Patrick Fischer of Cincinnati by current President Carol Seubert Marx at the OSBA’s Annual Convention in Cincinnati. Judge Fischer will officially become president on July 1, 2012. Judge Fischer is the first judge to serve as OSBA president in 15 years. He is also the 12th president from Cincinnati since the OSBA’s founding in 1880. Judge Fischer serves on the First District Court of Appeals in Hamilton County.  He has been in the practice of law for nearly 30 years. A graduate of Harvard Law School, he has been named to Best Lawyers in America®, one of the Top 50 Lawyers in Cincinnati by Cincinnati Magazine, and one of the Top 100 Lawyers in Ohio. He has been regularly named to Ohio Super Lawyers®."]
-		]
-i = 1
-rand_i = 0
-articles.each do |article|
-	Article.create(candidate: "Patrick J. Fischer", title: article[0], text: article[1], index: i, rand_index: rand_i, condition: "M1", template: i)
-	i += 1
-end
+count = 0
+tmp_count = 0
 
-new_articles = [
-				["Judge's slip 14 years ago brings new anguish to daughters of slain woman", "Common Pleas Judge Michael J. Holbrook granted Davis’ motion in July, ruling that O’Neill “misinformed the defendant that he had an opportunity for (probation) and judicial release when he did not.” Holbrook’s ruling is a scathing assessment of O’Neill’s handling of the sentencing hearing. “A reading of the transcript demonstrates that she did not care about the defendant’s understanding, or that it was a murder case, or anything other than moving cases no matter how sloppily it was done,” he wrote."],
-				["Ohio Judge Orders Woman to Spend Next Five Christmases in Jail", "An Ohio judge has sentenced a woman convicted of illegally selling drivers licenses to five days in jail - the next five Christmas days. The unusual sentence for Betina Young, 44, of Columbus, is what Judge Michael J. Holbrook calls a 'Holbrook Holiday.' The judge of Franklin County Common Pleas Courthouse asks the convicted defendants for their favorite holidays -- their birthday, the Fourth of July -- and then sentences to them to spend that day in prison."],
-				["Blue Christmas: Ohio woman gets unusual probation sentence", "An Ohio judge channeled his inner Ebenezer Scrooge in ordering a creative sentence Monday: Five Christmases in jail. Judge Michael J. Holbrook of the Franklin County court is known for issuing “Holbrook holidays” to give individual’s time to think about what the crimes they have committed. The 'holiday' includes a minimum of three days in jail each December around Christmas while on probation, although Holbrook leaves the exact amount of jail time up to the probation department."],
-				["8 Franklin County Common Pleas judges to face election challengers", "Eight of the nine Franklin County Common Pleas judges who are up for re-election in 2016 willhave opposition in November, based on candidate petitions filed by the Wednesday deadline. The races include eight for the court's general division and one for a spot on the DomesticRelations/Juvenile Court bench. The incumbents who will have opponents in the general division are Democrats Laurel Beatty,Kimberly Cocroft, Richard A. Frye and Mark A. Serrott and Republicans Michael J. Holbrook, Julie M. Lynch and PatSheeran, assuming all the candidates submitted enough valid signatures. A potential challenger also filed petitions to run against Domestic Relations/Juvenile CourtJudge Kim Browne, a Republican."],
-				["Lawmakers propose bill that would prevent drunk drivers from terminating license suspension early", "In Ohio, a person whose driver's license has been suspended for life as a result of an aggravated vehicular homicide offense can apply to modify or terminate the suspension after 15 years have elapsed, even if that person is in prison for a portion of the suspension period. But two lawmakers are trying to change that with a bill that would require the suspension to begin after the offender is released from prison. Judge Michael J. Holbrook, who is with the Franklin County Court of Common Pleas, said judges don’t usually impose lifetime suspensions because penalties are often reduced as part of a plea bargain."],
-				["Lakota Principal Openly Complains about Taxpayers: The Words of Michael Holbrook", "Michael Holbrook is number 11 on the top 434 Teachers at Lakota list.  He is a principal at Plains Elementary. On the first Monday after the election of the second school levy attempt, this is what he sent out to everyone that would listen working directly for him at the school.  Remember when reading this that Mr. Holbrook is the direct supervisor in that particular school, and his email was sent to his entire staff.  This letter says much about not only his political affiliation but also where his loyalties reside."],
-				["Michael Holbrook - Fsc Securities Corporation", "Michael Holbrook is a dual registered financial advisor in Rancho Cordova, CA. This advisor has been in practice for 27 years. Client information is for Fsc Securities Corporation and are based on percentage of assets under management. Client types are by firm, and represent a percentage of assets under management. For additional information on Michael Holbrook's client base, please contact the advisor."],
-				["Job spotlight: Michael Holbrook, vice president and co-owner of Columbus Travel", "Many vacationers will tell you that some of best moments of their trips come from the pleasant, sometimes adventurous surprises they encounter while traveling in places they've never been. For Michael Holbrook, who purchased Columbus Travel -- founded in 1950 and the city's oldest agency -- with his wife, Ramona, in 2008, the journey has been one of fortuitous operating decisions, physical relocations and simply finding ways to keep clients happy no matter where they may venture on this planet. The couple's route together started when Holbrook, a business litigation lawyer in Atlanta, met Ramona a couple of weeks after she opened a cruise-only franchise in 1994 in the state capital."],
-				["Michael Holbrook - Delview Secondary School", "Michael Holbrook is a teacher at Delview Secondary School located in Delta, British Columbia. When comparing Michael Holbrook's ratings to other teachers in the province of British Columbia, Michael Holbrook's ratings are above the average of 3.83 stars. Additionally, the average teacher rating at Delview Secondary School is 3.64 stars."],
-				["Traffic stop leads to arrests", "Two men are facing multiple charges after they were arrested following a traffic stop. During the incident, the pair allegedly traded shoes so one of them could run from the police. Michael Holbrook, 26, of Coxton, and Randall Cottrell, 28, of Evarts, were arrested by Kentucky State Police Trooper John Carlock on Sunday. According to the complaints, Holbrook was a passenger in a car operated by Cottrell that was pulled over on KY 38 at Brookside. Both men gave police false names in an attempt to avoid being identified. Police found a used syringe, a metal spoon and one Suboxone strip inside the passenger compartment of the vehicle."]
-			]
+title_path = Rails.root.join('titles.txt').to_s
+art_path = Rails.root.join('articles.txt').to_s
+title_in = File.open(title_path, 'r')
+art_in = File.open(art_path, 'r')
 
-new_articles.each do |new_article|
-	Article.create(candidate: "Michael J. Holbrook", title: new_article[0], text: new_article[1], index: i, rand_index: rand_i, condition: "L1", template: -1)
-	i += 1
-end
+titles = title_in.read.split('*****')
+articles = art_in.read.split('*****')
 
-articles2 = [
-	["Holbrook gets GOP nomination for Ohio Supreme Court", "Republican Michael Holbrook, a judge on the state appeals court in Cincinnati, won his party's nomination for a seat on the Ohio Supreme Court today."],
-	["Michael Holbrook GOP primary for Ohio Supreme Court: endorsement editorial", "Two appellate judges are vying for the Republican nomination for an Ohio Supreme Court seat, but it's an easy call: Judge Michael Holbrook, of the Cincinnati-based 1st Ohio District Court of Appeals, is the clear choice over Judge Colleen Mary O'Toole, of Concord, of the Warren-based 11th Ohio District Court of Appeals."],
-	["Judge Michael Holbrook, P.J. - Hamilton County Court of Appeals Judges", "Judge Holbrook was elected to the Ohio First District Court of Appeals in November 2010. He was re-elected in 2012. Judge Holbrook  has dedicated himself to the practice of law for nearly 30 years. An honors graduate of Harvard Law School and Harvard College, he has been named to Best Lawyers in America®, one of the Top 50 Lawyers in Cincinnati, and one of the Top 100 Lawyers in Ohio. He was routinely named to Ohio Super Lawyers®. Judge Holbrook  was elected President of the Ohio State Bar Association, and served as same from 2012-2013."],
-	["Michael Holbrook – Redskins", "Joined the NFL as the 17th-round draft choice of St. Louis in 1961 out of the University of Nebraska... Signed with Washington as a free agent in 1968... 1969 Pro Bowler... Helped lead the Redskins to Super Bowl VII in 1972... Finished 17-year career with 56 interceptions... Ranked seventh all-time in Redskins career interceptions with 27 and fourth all-time with 412 career interception return yards."],
-	["Whatever happened to ... Michael Holbrook", "If you were to look at him in civilian clothes you would not have thought he was a professional football player. He stood only 5-feet, 8-inches tall and weighed 170 pounds. Not too many people thought he would make it in the National Football League including himself when he was drafted by the St. Louis Cardinals in the 17th round of the NFL draft in 1961. But he was also selected by the then Dallas Texans (later to be the Kansas City Chiefs) in the AFL draft."],
-	["Republican foes battle in rare contest for Ohio Supreme Court nomination", "COLUMBUS — There have been frequent battles on the Democratic side, but rarely has the Republican nomination for an Ohio Supreme Court seat been contested. This year, Cincinnati appellate Judge Michael Holbrook, the state Republican Party’s endorsed candidate for one of three seats on the ballot, faces a challenge from northeast Ohio Judge Colleen Mary O’Toole."],
-	["The Soul Of The Game: Michael Holbrook", "In the long history of the NFL there have been players who defined their positions because of their physicality. Men like Dick Butkus, Dick “Night Train” Lane, and Lawrence Taylor were freaks at their position. They were bigger than what other teams were geared to deal with normally. Yet there are those that stand out as hitters first although their size would suggest something different. Enter Michael Holbrook."],
-	["Scot McCloughan’s dad, Michael Holbrook, and the birth of bump-and-run coverage", "Kent McCloughan’s most obvious link to the Redskins is well-known: the father of Washington’s new general manager was a third-round Redskins draft pick in 1965, although he never played for the team. And yet that doesn’t completely explain the frequency with which McCloughan’s name was mentioned in Washington newspaper copy. Because Kent McCloughan was also part of an esoteric NFL history debate, a debate starring Hall of Fame cornerback Willie Brown and Washington fan favorite Michael Holbrook."],
-	["Finance – Michael Holbrook Nissan | New Nissan dealership", "Welcome to Michael Holbrook Nissan's Finance Department, your auto loan and car lease resource. We're eager to provide financing for your new car, or we can assist in used car financing. Check out our online car loan calculator for an instant car loan rate. Then, proceed to our online finance application."],
-	["Cincinnati judge becomes OSBA president", "The Ohio State Bar Association president’s gavel was ceremoniously passed to Judge Michael Holbrook of Cincinnati by current President Carol Seubert Marx at the OSBA’s Annual Convention in Cincinnati. Judge Holbrook will officially become president on July 1, 2012. Judge Holbrook is the first judge to serve as OSBA president in 15 years. He is also the 12th president from Cincinnati since the OSBA’s founding in 1880. Judge Holbrook serves on the First District Court of Appeals in Hamilton County.  He has been in the practice of law for nearly 30 years. A graduate of Harvard Law School, he has been named to Best Lawyers in America®, one of the Top 50 Lawyers in Cincinnati by Cincinnati Magazine, and one of the Top 100 Lawyers in Ohio. He has been regularly named to Ohio Super Lawyers®."]
+conditions = [
+	"M11",
+	"M12",
+	"L11",
+	"L12"
 ]
 
-articles2.each do |article2|
-	Article.create(candidate: "Michael J. Holbrook", title: article2[0], text: article2[1], index: i, rand_index: rand_i, condition: "M2", template: -1)
-	i += 1
-end
-
-new_articles2 = [
-	["Judge's slip 14 years ago brings new anguish to daughters of slain woman", "Common Pleas Judge Patrick Fischer granted Davis’ motion in July, ruling that O’Neill “misinformed the defendant that he had an opportunity for (probation) and judicial release when he did not.” Fischer’s ruling is a scathing assessment of O’Neill’s handling of the sentencing hearing. “A reading of the transcript demonstrates that she did not care about the defendant’s understanding, or that it was a murder case, or anything other than moving cases no matter how sloppily it was done,” he wrote."],
-	["Ohio Judge Orders Woman to Spend Next Five Christmases in Jail", "An Ohio judge has sentenced a woman convicted of illegally selling drivers licenses to five days in jail - the next five Christmas days. The unusual sentence for Betina Young, 44, of Columbus, is what Judge Patrick Fischer calls a 'Fischer Holiday.'' The judge of Franklin County Common Pleas Courthouse asks the convicted defendants for their favorite holidays -- their birthday, the Fourth of July -- and then sentences to them to spend that day in prison."],
-	["Blue Christmas: Ohio woman gets unusual probation sentence", "An Ohio judge channeled his inner Ebenezer Scrooge in ordering a creative sentence Monday: Five Christmases in jail. Judge Patrick Fischer of the Franklin County court is known for issuing “Fischer holidays” to give individual’s time to think about what the crimes they have committed. The 'holiday' includes a minimum of three days in jail each December around Christmas while on probation, although Fischer leaves the exact amount of jail time up to the probation department."],
-	["8 Franklin County Common Pleas judges to face election challengers", "Eight of the nine Franklin County Common Pleas judges who are up for re-election in 2016 will have opposition in November, based on candidate petitions filed by the Wednesday deadline. The races include eight for the court's general division and one for a spot on the Domestic Relations/Juvenile Court bench. The incumbents who will have opponents in the general division are Democrats Laurel Beatty, Kimberly Cocroft, Richard A. Frye and Mark A. Serrott and Republicans Michael J. Holbrook, Julie M. Lynch and Tim Sheeran, assuming all the candidates submitted enough valid signatures. A potential challenger also filed petitions to run against Domestic Relations/Juvenile Court Judge Kim Browne, a Republican."],
-	["Lawmakers propose bill that would prevent drunk drivers from terminating license suspension early", "In Ohio, a person whose driver's license has been suspended for life as a result of an aggravated vehicular homicide offense can apply to modify or terminate the suspension after 15 years have elapsed, even if that person is in prison for a portion of the suspension period. But two lawmakers are trying to change that with a bill that would require the suspension to begin after the offender is released from prison. Judge Patrick Fischer, who is with the Franklin County Court of Common Pleas, said judges don’t usually impose lifetime suspensions because penalties are often reduced as part of a plea bargain."],
-	["Lakota Principal Openly Complains about Taxpayers: The Words of Patrick Fischer", "Patrick Fischer is number 11 on the top 434 Teachers at Lakota list.  He is a principal at Plains Elementary. On the first Monday after the election of the second school levy attempt, this is what he sent out to everyone that would listen working directly for him at the school.  Remember when reading this that Mr. Fischer is the direct supervisor in that particular school, and his email was sent to his entire staff.  This letter says much about not only his political affiliation but also where his loyalties reside."],
-	["Patrick Fischer- Fsc Securities Corporation", "Patrick Fischer is a dual registered financial advisor in Rancho Cordova, CA. This advisor has been in practice for 27 years. Client information is for Fsc Securities Corporation and are based on percentage of assets under management. Client types are by firm, and represent a percentage of assets under management. For additional information on Pat Fischer's client base, please contact the advisor."],
-	["Job spotlight: Patrick Fischer, vice president and co-owner of Columbus Travel", "Many vacationers will tell you that some of best moments of their trips come from the pleasant, sometimes adventurous surprises they encounter while traveling in places they've never been.For Patrick Fischer, who purchased Columbus Travel -- founded in 1950 and the city's oldest agency -- with his wife, Ramona, in 2008, the journey has been one of fortuitous operating decisions, physical relocations and simply finding ways to keep clients happy no matter where they may venture on this planet.The couple's route together started when Holbrook, a business litigation lawyer in Atlanta, met Ramona a couple of weeks after she opened a cruise-only franchise in 1994 in the state capital."],
-	["Patrick Fischer- Delview Secondary School", "Patrick Fischer is a teacher at Delview Secondary School located in Delta, British Columbia. When comparing Michael Holbrook's ratings to other teachers in the province of British Columbia, Michael Holbrook's ratings are above the average of 3.83 stars. Additionally, the average teacher rating at Delview Secondary School is 3.64 stars."],
-	["Traffic stop leads to arrests", "Two men are facing multiple charges after they were arrested following a traffic stop. During the incident, the pair allegedly traded shoes so one of them could run from the police.Patrick Fischer, 26, of Coxton, and Randall Cottrell, 28, of Evarts, were arrested by Kentucky State Police Trooper John Carlock on Sunday.According to the complaints, Fischer was a passenger in a car operated by Cottrell that was pulled over on KY 38 at Brookside. Both men gave police false names in an attempt to avoid being identified. Police found a used syringe, a metal spoon and one Suboxone strip inside the passenger compartment of the vehicle."]
+candidates = [
+	"James Walker", 
+	"Scott Taylor", 
+	"Steven Moore", 
+	"Thomas Clark", 
+	"Brian Miller", 
+	"Robert Harris",
+	"Peter Brown",
+	"Roger Lewis"
 ]
 
-new_articles2.each do |art|
-	Article.create(candidate: "Patrick J. Fischer", title: art[0], text: art[1], index: i, rand_index: rand_i, condition: "L2", template: -1)
-	i += 1
+template_sets = [
+	[
+		"TheBusinessJournal",
+		"TheHerald",
+		"TheReview",
+		"TheEnquirer",
+		"TheAdvocate",
+		"TheTribune",
+		"TheGazette",
+		"TheUnionTimes",
+		"TheAdvocate",
+		"TheTribune",
+		"TheGazette",
+		"TheUnionTimes",
+		"TheBusinessJournal",
+		"TheHerald",
+		"TheReview",
+		"TheEnquirer"
+	],
+	[
+		"Whitepages",
+		"PeopleFinder",
+		"spokeo",
+		"zoominfo",
+		"USSearch",
+		"PeopleGuide",
+		"intelius",
+		"PeopleSmart",
+		"USSearch",
+		"PeopleGuide",
+		"intelius",
+		"PeopleSmart",
+		"Whitepages",
+		"PeopleFinder",
+		"spokeo",
+		"zoominfo"
+	]
+]
+
+while count < titles.count
+	title = titles[count]
+	article = articles[count]
+
+	condition = conditions[count/16]
+	candidate = candidates[count/8]
+	templates = [template_sets[0][tmp_count], template_sets[1][tmp_count]]
+
+	art = Article.new(
+		candidate: candidate, 
+		title: title,
+		text: article,
+		index: count,
+		rand_index: 0,
+		condition: condition,
+		template: templates[0]
+		)
+
+	count += 1
+	
+	neutral = Article.new(
+		candidate: candidate, 
+		title: title,
+		text: article,
+		index: count,
+		rand_index: 0,
+		condition: condition,
+		template: templates[1]
+		)
+
+	art.save
+	neutral.save
+
+	count += 1
+	tmp_count += 1
+	if tmp_count == 16
+		tmp_count = 0
+	end
 end
