@@ -73,32 +73,40 @@ template_sets = [
 	]
 ]
 
+neutral_pages = {
+	Whitepages: ["Whitepages Premium", "Your background report is ready..."],
+	PeopleFinder: ["PeopleFinder", "Select an option to view results for..."],
+	spokeo: ["SPOKEO", "We found information on..."],
+	zoominfo: ["Zoominfo", "Here's what we found..."],
+	USSearch: ["USSearch", "Get the information you need on..."],
+	PeopleGuide: ["PeopleGuide", "PeopleGuide information on..."],
+	intelius: ["Intelius", "Get the information you need on..."],
+	PeopleSmart: ["PeopleSmart", "Select an option to view results for..."],
+}
+
 while count < titles.count
 	title = titles[count]
 	article = articles[count]
 
-	condition = conditions[count/16]
-	candidate = candidates[count/8]
+	condition = conditions[count/32]
+	candidate = candidates[count/16]
 	templates = [template_sets[0][tmp_count], template_sets[1][tmp_count]]
 
 	art = Article.new(
 		candidate: candidate, 
-		title: title,
-		text: article,
-		index: count,
-		rand_index: 0,
+		title: title, text: article,
+		index: count, rand_index: 0,
 		condition: condition,
 		template: templates[0]
 		)
 
 	count += 1
 	
+	sym = templates[1].to_sym
 	neutral = Article.new(
 		candidate: candidate, 
-		title: title,
-		text: article,
-		index: count,
-		rand_index: 0,
+		title: neutral_pages[sym][0], text: neutral_pages[sym][1],
+		index: count, rand_index: 0,
 		condition: condition,
 		template: templates[1]
 		)

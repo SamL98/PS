@@ -11,6 +11,8 @@ for line in f:
 		title = words[7] + '*****'
 		content = words[8] + '*****'
 		title_out.write(title)
+		title_out.write(title)
+		article_out.write(content)
 		article_out.write(content)
 
 f.close()

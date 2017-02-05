@@ -54,11 +54,11 @@ class SearchEngineController < ApplicationController
 		end
 		@cand = candidate
 
-		@articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
+		articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
 		if page == 1
-			@articles = @articles[0..8]
+			@articles = articles[0..8]
 		else
-			@articles = @articles[8..16]
+			@articles = articles[8..16]
 		end
 		@page = page
 
