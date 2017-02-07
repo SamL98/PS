@@ -76,6 +76,7 @@ class SearchEngineController < ApplicationController
 		id = params[:id].to_i
 		condition = params[:cond].to_s
 		@subj_id = params[:subj_id].to_s
+		gon.cand = params[:cand].to_s
 		gon.subjId = @subj_id
 		gon.cond = condition
 
