@@ -26,7 +26,6 @@ class SearchEngineController < ApplicationController
 	end
 
 	def search
-		page = params[:p].to_i
 		query = params[:q].to_s
 		condition = params[:c].to_s
 		@subj_id = params[:subj_id].to_s
@@ -54,13 +53,7 @@ class SearchEngineController < ApplicationController
 		end
 		@cand = candidate
 
-		articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
-		if page == 1
-			@articles = articles[0..8]
-		else
-			@articles = articles[8..16]
-		end
-		@page = page
+		@articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
 
 		i = 1
 		if @articles != nil && @articles.length > 0

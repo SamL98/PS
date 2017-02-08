@@ -1,6 +1,6 @@
 <head>
 	<!-- Latest compiled and minified CSS -->
-	<title>Googol</title>
+	<title>Sagamore</title>
 	<%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,18 +12,11 @@
 </head>
 <body>
 	<div class="page-header">
-		<h1>Search Engine</h1>
+		<h1><%= link_to 'Sagamore', home_path(cond: @cond, subj: @subj_id) %></h1>
 	</div>
 	<% @articles.each do |article| %>
 		<h2><%= link_to "#{article.title}", title_path(article.index, rand_index: article.rand_index, subj_id: @subj_id, cond: @cond, cand: @cand) %></h2>
 		<p id="snippet"><%= article.text[0..article.text.index('.')] + "..." %></p>
-	<% end %>
-	<hr></hr>
-	<% if @page == 1 %>
-		<%= link_to 'Next page', search_path(2, p: 2, q: @query, c: @cond, subj_id: @subj_id), id: "nextPage" %>
-	<% end %>
-	<% if @page == 2 %>
-		<%= link_to 'Go back', search_path(1, p: 1, q: @query, c: @cond, subj_id: @subj_id), id: "goBack" %>
 	<% end %>
 </body>
 
@@ -42,6 +35,7 @@
 <style>
 	h1 {
 		text-align: center;
+		color: black;
 	}
 	h2, #snippet {
 		text-align: left;
@@ -52,15 +46,5 @@
 	}
 	h2, h2:hover, h2:focus {
 		color: blue;
-	}
-	#nextPage {
-		float: right;
-		margin-bottom: 10px;
-		margin-right: 10px;
-	}	
-	#goBack {
-		float: left;
-		margin-bottom: 10px;
-		margin-left: 10px;
 	}
 </style>

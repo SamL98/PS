@@ -15,11 +15,10 @@
 			<img src="https://rawgit.com/michaelgrotton/SearchEngine/gh-pages/Search_logo.png" style="width:350px;height:275px"></img>
 		</div>
 		<div id="search_bar">
-			<%= form_tag("/search/1", method: "get") do %>
+			<%= form_tag("/search", method: "get") do %>
 				<%= text_field_tag(:q) %>
 				<%= hidden_field_tag(:subj_id, @subj_id) %>
 				<%= hidden_field_tag(:c, @condition) %>
-        <%= hidden_field_tag(:p, 1) %>
 				<%= submit_tag("Search") %>
 			<% end %>
 		</div>
