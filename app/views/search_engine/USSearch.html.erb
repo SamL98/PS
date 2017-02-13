@@ -1,0 +1,79 @@
+<head>
+    <%= csrf_meta_tags %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="/assets/jquery.js" type="text/javascript"></script>
+    <script src="/assets/jquery_ujs.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/michaelgrotton/USSearch/gh-pages/css/ussearch.css">
+    <title>USSearch</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="logocont">
+        <p id="logo"><span style="color:green;">US</span>SEARCH</p>
+      </div>
+    <div id="getcont">
+      <p id="get" class="text">Get the information you need on Patrick Hermann Fisher</p>
+      <script type="text/javascript">
+        document.getElementById('get').innerHTML = 'Get the information you need on ' + gon.cand; 
+      </script>
+    </div>
+    
+    <table id="t01">
+    <tr>
+      <th><i>Reports include:</i></th>
+      <th>Standard</th> 
+      <th>Premium</th>
+    </tr>
+    <tr>
+      <td><b>Full Name</b></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Age</b></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Address and Address History</b></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Phone Number</b></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Relatives and Associates</b></td>
+      <td></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Neighbors Name and Address</b></td>
+      <td></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Social Networks</b></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Property Ownership Details</b></td>
+      <td></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>
+    <tr>
+      <td><b>Marriage Records</b></td>
+      <td></td>
+      <td><img src="http://www.clipartbest.com/cliparts/dT8/5e6/dT85e6aqc.png" style="width:10px;height:10px;"></td>
+    </tr>  
+  </table>
+      
+      <p id="copy" class="text">&copy; Copyright USSearch 2016.</p>
+
+  </body>
+  <%= javascript_include_tag 'DisplayTimer' %>

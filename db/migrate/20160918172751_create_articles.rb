@@ -7,6 +7,8 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.integer :index
       t.integer :rand_index
       t.string :condition
+      t.integer :neutrality
+      t.boolean :is_lure
       t.string :template
 
       t.timestamps

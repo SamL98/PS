@@ -22,6 +22,7 @@ class SearchEngineController < ApplicationController
 			subject.save
 		end
 
+		@randomize = true
 		@articles = Article.all
 	end
 
@@ -34,17 +35,44 @@ class SearchEngineController < ApplicationController
 
 		gon.subjId = @subj_id
 		gon.cond = @cond
+		gon.isLure = false
+		gon.code = 0
+		gon.cand = ""
 
 		candidates = []
 		case condition
 		when 'M11'
 			candidates = ["James Walker", "Scott Taylor"]
+		when 'M21'
+			candidates = ["David Walker", "Jerry Taylor"]
+		when 'L31'
+			candidates = ["James Walker", "Scott Taylor"]
+		when 'L41'
+			candidates = ["David Walker", "Jerry Taylor"]
 		when 'M12'
 			candidates = ["Steven Moore", "Thomas Clark"]
+		when 'M22'
+			candidates = ["Ronald Moore", "Walter Clark"]
+		when 'L32'
+			candidates = ["Steven Moore", "Thomas Clark"]
+		when 'L42'
+			candidates = ["Ronald Moore", "Walter Clark"]
 		when 'L11'
 			candidates = ["Brian Miller", "Robert Harris"]
+		when 'L21'
+			candidates = ["Larry Miller", "George Harris"]
+		when 'M31'
+			candidates = ["Brian Miller", "Robert Harris"]
+		when 'M41'
+			candidates = ["Larry Miller", "George Harris"]
 		when 'L12'
 			candidates = ["Peter Brown", "Roger Lewis"]
+		when 'L22'
+			candidates = ["Henry Brown", "Keith Lewis"]
+		when 'M32'
+			candidates = ["Peter Brown", "Roger Lewis"]
+		when 'M42'
+			candidates = ["Henry Brown", "Keith Lewis"]
 		end
 
 		candidate = ""
@@ -55,13 +83,16 @@ class SearchEngineController < ApplicationController
 
 		@articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
 
-		i = 1
-		if @articles != nil && @articles.length > 0
-			@articles = @articles.shuffle
-			@articles.each do |art|
-				art.update_attribute(:rand_index, i)
-				i+= 1
+		if @randomize
+			i = 1
+			if @articles != nil && @articles.length > 0
+				@articles = @articles.shuffle
+				@articles.each do |art|
+					art.update_attribute(:rand_index, i)
+					i+= 1
+				end
 			end
+			@randomize = false
 		end
 	end
 
@@ -69,6 +100,7 @@ class SearchEngineController < ApplicationController
 		id = params[:id].to_i
 		condition = params[:cond].to_s
 		@subj_id = params[:subj_id].to_s
+
 		gon.cand = params[:cand].to_s
 		gon.subjId = @subj_id
 		gon.cond = condition
@@ -83,12 +115,10 @@ class SearchEngineController < ApplicationController
 		gon.text = @article.text
 		gon.index = @article.index
 		gon.randIndex = @article.rand_index
+		gon.isLure = @article.is_lure
+		gon.code = @article.neutrality
 
-		template = @article.template + "-gh-pages"
-		full_path = Rails.root.join('app', 'assets', 'Templates', template, 'index.html').to_s
-		file = File.open(full_path, 'r')
-		@content = file.read
-		file.close
+		render @article.template
 	end
 
 	def log
@@ -104,7 +134,8 @@ class SearchEngineController < ApplicationController
 	private 
 	def visit_params
 		visit = params["article"]
-		{index: visit["index"], rand_index: visit["rand_index"], time_spent: visit["time_spent"]}
+		{index: visit["index"], rand_index: visit["rand_index"], time_spent: visit["time_spent"],
+			candidate: visit["cand"], condition: visit["cond"], lure: visit["lure"], code: visit["code"]}
 	end
 
 	def filter_search(candidates, query)
