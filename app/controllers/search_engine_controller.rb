@@ -22,7 +22,8 @@ class SearchEngineController < ApplicationController
 			subject.save
 		end
 
-		@randomize = true
+		RandomFlag.first.update_attribute(:flag, true)
+		RandomFlag.first.update_attribute(:ordering, "")
 		@articles = Article.all
 	end
 
@@ -83,16 +84,27 @@ class SearchEngineController < ApplicationController
 
 		@articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
 
-		if @randomize
+		if RandomFlag.first.flag
+			order_string = ""
 			i = 1
 			if @articles != nil && @articles.length > 0
 				@articles = @articles.shuffle
 				@articles.each do |art|
 					art.update_attribute(:rand_index, i)
+					order_string += art.index.to_s + " "
 					i+= 1
 				end
 			end
-			@randomize = false
+			RandomFlag.first.update_attribute(:flag, false)
+			RandomFlag.first.update_attribute(:ordering, order_string)
+		else
+			tmp = []
+			i = 0
+			RandomFlag.first.ordering.split(" ").each do |index|
+				tmp[i] = @articles[index.to_i]
+				i += 1
+			end
+			@articles = tmp
 		end
 	end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926203053) do
+ActiveRecord::Schema.define(version: 20170218161356) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "candidate"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20160926203053) do
     t.integer  "neutrality"
     t.boolean  "is_lure"
     t.string   "template"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "random_flags", force: :cascade do |t|
+    t.boolean  "flag"
+    t.string   "ordering"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

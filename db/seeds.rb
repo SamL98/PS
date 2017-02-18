@@ -171,3 +171,5 @@ while count < titles.count
 		lure_counter = 0
 	end
 end
+
+RandomFlag.new(flag: true, ordering: "").save()
