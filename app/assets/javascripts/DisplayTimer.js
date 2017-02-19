@@ -6,6 +6,8 @@ $(document).ready(function() {
   var index = gon.index;
 
   console.log('showing article ' + index + ' at index ' + rand_index + ' for ' + id);
+  console.log('candidate ' + gon.cand + ' condition ' + gon.cond);
+
   function logVisit() {
     console.log('logging visit');
     
