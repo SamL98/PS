@@ -16,8 +16,10 @@
 	</div>
 	<% if @articles != nil && @articles.count > 0 %>
 		<% @articles.each do |article| %>
-			<h2><%= link_to "#{article.title}", title_path(article.index, rand_index: article.rand_index, subj_id: @subj_id, cond: @cond, cand: @cand) %></h2>
-			<p id="snippet"><%= article.text[0..article.text.index('.')] + "..." %></p>
+			<% if article != nil %>
+				<h2><%= link_to "#{article.title}", title_path(article.index, rand_index: article.rand_index, subj_id: @subj_id, cond: @cond, cand: @cand) %></h2>
+				<p id="snippet"><%= article.text[0..article.text.index('.')] + "..." %></p>
+			<% end %>
 		<% end %>
 	<% end %>
 </body>

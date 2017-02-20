@@ -79,8 +79,8 @@ class SearchEngineController < ApplicationController
 				articles = articles.shuffle
 				articles.each do |art|
 					art.update_attribute(:rand_index, i)
-					order_string += art.index.to_s + " "
-					i+= 1
+					order_string += (i - 1).to_s + " "
+					i += 1
 				end
 			end
 			RandomFlag.first.update_attribute(:flag, false)
@@ -131,13 +131,14 @@ class SearchEngineController < ApplicationController
 		puts 'LOGGING VISIT FOR ' + identifier.upcase
 		subject = Subject.where("identifier = ?", identifier).first
 		@visit = subject.visits.create(visit_params)
+		puts @visit.index
+		puts @visit.candidate
 		@visit.save
 	end
 
 	private 
 	def visit_params
 		visit = params["article"]
-		puts visit
 		{index: visit["index"], rand_index: visit["rand_index"], time_spent: visit["time_spent"],
 			candidate: visit["cand"], condition: visit["cond"], lure: visit["lure"], code: visit["code"]}
 	end
