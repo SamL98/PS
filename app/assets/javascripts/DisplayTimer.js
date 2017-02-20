@@ -1,4 +1,4 @@
-$(document).ready(function() {
+//$(document).ready(function() {
 
   var start = Date.now();
   var id = gon.subjId;
@@ -26,4 +26,4 @@ $(document).ready(function() {
     document.getElementById('content').innerHTML = gon.text;
   }
 
-});
+//});

@@ -3,28 +3,16 @@ class SearchEngineController < ApplicationController
 	end
 
 	def home
-		@subj_id = params[:subj]
-		@condition = params[:cond]
+		@subj_id = params[:subj].to_s
+		@condition = params[:cond].to_s
 
-		existing_id = 0
-
-		Subject.all.each do |subj|
-			if subj.identifier == @subj_id
-				existing_id = subj.id
-				break
-			end
-		end
-
-		if existing_id != 0
-			subject = Subject.find(existing_id)
-		else
-			subject = Subject.new({identifier: @subj_id, condition: @condition})
-			subject.save
+		subject = Subject.where("identifier = ?", @subj_id)
+		if subject.length == 0
+			Subject.new(identifier: @subj_id).save()
 		end
 
 		RandomFlag.first.update_attribute(:flag, true)
 		RandomFlag.first.update_attribute(:ordering, "")
-		@articles = Article.all
 	end
 
 	def search
@@ -82,14 +70,14 @@ class SearchEngineController < ApplicationController
 		end
 		@cand = candidate
 
-		@articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
+		articles = Article.where("candidate = ? AND condition = ?", candidate, condition)
 
 		if RandomFlag.first.flag
 			order_string = ""
 			i = 1
-			if @articles != nil && @articles.length > 0
-				@articles = @articles.shuffle
-				@articles.each do |art|
+			if articles != nil && articles.length > 0
+				articles = articles.shuffle
+				articles.each do |art|
 					art.update_attribute(:rand_index, i)
 					order_string += art.index.to_s + " "
 					i+= 1
@@ -101,10 +89,14 @@ class SearchEngineController < ApplicationController
 			tmp = []
 			i = 0
 			RandomFlag.first.ordering.split(" ").each do |index|
-				tmp[i] = @articles[index.to_i]
+				tmp[i] = articles[index.to_i]
 				i += 1
 			end
-			@articles = tmp
+			articles = tmp
+		end
+
+		if articles.length > 0 
+			@articles = articles
 		end
 	end
 
@@ -135,7 +127,6 @@ class SearchEngineController < ApplicationController
 
 	def log
 		identifier = params["subj_id"]
-		condition = params["condition"]
 
 		puts 'LOGGING VISIT FOR ' + identifier.upcase
 		subject = Subject.where("identifier = ?", identifier).first
@@ -146,6 +137,7 @@ class SearchEngineController < ApplicationController
 	private 
 	def visit_params
 		visit = params["article"]
+		puts visit
 		{index: visit["index"], rand_index: visit["rand_index"], time_spent: visit["time_spent"],
 			candidate: visit["cand"], condition: visit["cond"], lure: visit["lure"], code: visit["code"]}
 	end
