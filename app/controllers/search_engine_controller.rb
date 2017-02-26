@@ -101,6 +101,15 @@ class SearchEngineController < ApplicationController
 	end
 
 	def show
+		indeces = RandomFlag.first.ordering.split(" ")
+		indeces = indeces.shuffle
+
+		order_string = ""
+		indeces.each do |index|
+			order_string += index + " "
+		end
+		RandomFlag.first.update_attribute(:ordering, order_string)
+
 		id = params[:id].to_i
 		condition = params[:cond].to_s
 		@subj_id = params[:subj_id].to_s
