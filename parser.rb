@@ -1,8 +1,21 @@
-$stdout.reopen('final_out.csv', 'w')
+require 'active_record'
+require 'Rails'
+
+config = Rails::Application::Configuration.new
+#host = config.database_configuration[Rails.env]["host"]
+#print host
+#username = config.database_configuration[Rails.env]["username"]
+#password = config.database_configuration[Rails.env]["password"]
+
+ActiveRecord::Base.establish_connection(
+    adapter: 'sqlite3',
+    database: 'db/production.sqlite3',
+)
+
 
 Subject.all.each do |subj|
     subj.visits.all.each do |visit|
-        if visit.index >= 0
+        if !visit.index.nil?
             print visit.candidate
             print ','
             print visit.condition
