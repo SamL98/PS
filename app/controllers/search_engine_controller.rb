@@ -154,7 +154,6 @@ class SearchEngineController < ApplicationController
 
 	def filter_search(candidates, query)
 		candidate = ""
-
 		search_terms = query.split(" ")
 		search_terms.each do |term|
 			term.tr('!@#$%^&*()~`1234567890-=_+[][]|{};:\"\,./<>?', '')
@@ -171,5 +170,6 @@ class SearchEngineController < ApplicationController
 				end
 			end
 		end
+		return candidate
 	end
 end
