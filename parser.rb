@@ -1,4 +1,4 @@
-$stdout = File.new('final_output.csv')
+$stdout.reopen('final_out.csv', 'w')
 
 Subject.all.each do |subj|
     subj.visits.all.each do |visit|
