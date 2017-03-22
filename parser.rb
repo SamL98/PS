@@ -25,6 +25,7 @@ Subject.all.each do |subj|
                     if art.index == visit.index
                         puts art.title
                     end
+                end
             else
                 puts ''
             end
