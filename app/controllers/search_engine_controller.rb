@@ -145,6 +145,47 @@ class SearchEngineController < ApplicationController
 		@visit.save
 	end
 
+	def parse_data
+		original_stdout = $stdout.clone
+		$stdout = File.new(params[:filename].to_s + '.csv', 'w')
+		Subject.all.each do |subj|
+			subj.visits.all.each do |visit|
+				if !visit.index.nil?
+					print subj.identifier
+					print ','
+					print visit.candidate
+					print ','
+					print visit.condition
+					print ','
+					print visit.lure
+					print ','
+					print visit.code
+					print ','
+					print visit.index
+					print ','
+					print visit.rand_index
+					print ','
+					print visit.time_spent
+					print ','
+					print visit.created_at
+					if visit.candidate.length > 0
+						print ','
+						articles = Article.where("candidate = ? AND condition = ?", visit.candidate, visit.condition)
+						articles.all.each do |art|
+							if art.index == visit.index
+								puts art.title
+							end
+						end
+					else
+						puts ''
+					end
+				end
+			end
+		end
+		$stdout = original_stdout
+		puts 'affirm stdout back to normal'
+	end
+
 	private 
 	def visit_params
 		visit = params["article"]
@@ -172,4 +213,5 @@ class SearchEngineController < ApplicationController
 		end
 		return candidate
 	end
+
 end
