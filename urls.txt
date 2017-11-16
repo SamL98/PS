@@ -1,0 +1,22 @@
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/PeopleFinder/gh-pages/css/peoplef.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/PeopleSmart/gh-pages/css/people.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheBusinessJournal/gh-pages/css/journal.css">
+     <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheEnquirer/gh-pages/css/enquirer.css">
+      <img src="https://rawgit.com/michaelgrotton/TheEnquirer/gh-pages/ActionInk.png" style="width:250px;height:175px">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheGazette/gh-pages/css/gazette.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheTribune/gh-pages/css/tribune.css">
+        <img id="pic" src="https://rawgit.com/michaelgrotton/TheTribune/gh-pages/TheTribune.png">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheUnionTimes/gh-pages/css/times.css">
+			<img src="https://rawgit.com/michaelgrotton/SearchEngine/gh-pages/Search_logo.png" style="width:350px;height:275px"></img>
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/spokeo/gh-pages/css/spoke.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/PeopleFinder/gh-pages/css/peoplef.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/PeopleSmart/gh-pages/css/people.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheBusinessJournal/gh-pages/css/journal.css">
+     <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheEnquirer/gh-pages/css/enquirer.css">
+      <img src="https://rawgit.com/michaelgrotton/TheEnquirer/gh-pages/ActionInk.png" style="width:250px;height:175px">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheGazette/gh-pages/css/gazette.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheTribune/gh-pages/css/tribune.css">
+        <img id="pic" src="https://rawgit.com/michaelgrotton/TheTribune/gh-pages/TheTribune.png">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/TheUnionTimes/gh-pages/css/times.css">
+			<img src="https://rawgit.com/michaelgrotton/SearchEngine/gh-pages/Search_logo.png" style="width:350px;height:275px"></img>
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/spokeo/gh-pages/css/spoke.css">
