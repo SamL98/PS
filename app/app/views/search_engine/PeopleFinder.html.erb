@@ -1,0 +1,59 @@
+ <head>
+    <%= csrf_meta_tags %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/michaelgrotton/searchEngineSites/master/PeopleFinder/css/peoplef.css">
+    <title>PeopleFinder</title>
+  </head>
+  <body>
+    <div id="top">
+      <div id="titlecont">
+        <p id="title">People<span style="color:gray">Finder</span></p>
+      </div>
+      <div id="piccont">
+      </div>
+    </div>
+    
+    <div id="container">
+      <p id="prompt">Select an option to view results for <span style="color:gray;" id="name">Francis E. Smith</span></p>
+      <script type="text/javascript">
+        document.getElementById('name').innerHTML = gon.cand; 
+      </script>
+      <div id="check1">
+        <p id="ps" class="text">Standard Membership</p>
+        <p id="pss" class="text">Full name, Age, Relationship status</p>
+        <p id="num" class="text">$ <span style="font-size:40px;">9</span>.99</p>
+        <div id="hey">
+          <ul id="info">
+            <li class="text">Addresses</li>
+            <li class="text">Phone Numbers</li>
+            <li class="text">Location History</li>
+            <li class="text">Family Members</li>
+            <li class="text">Court Records</li>
+            <li class="text">Date of Birth</li>
+          </ul>   
+        </div>
+      </div>
+      
+      <div id="check2">
+        <p id="ps" class="text"><span style="color:gold">Premium</span> Membership</p>
+        <p id="pss" class="text">Phone, Email, Business Contacts, and Full Address</p>
+        <p id="num" class="text">$<span style="font-size:40px;">14</span>.99</p>
+        <div id="hey">
+          <ul id="info">
+            <li class="text">Addresses</li>
+            <li class="text">Phone Numbers</li>
+            <li class="text">Location History</li>
+            <li class="text">Family Members</li>
+            <li class="text">Court Records</li>
+            <li class="text">Date of Birth</li>
+            <li class="text">Social Network</li>
+            <li class="text">Email Search</li>
+          </ul>   
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  <%= javascript_include_tag 'DisplayTimer' %>

@@ -1,0 +1,20 @@
+=> #<File:final_data.csv>
+NoMethodError: undefined method `first' for #<Subject:0x0000000599ff70>
+	from /home/lerner.67/.gem/ruby/gems/activemodel-5.0.0.1/lib/active_model/attribute_methods.rb:433:in `method_missing'
+	from (irb):4:in `block in irb_binding'
+	from /home/lerner.67/.gem/ruby/gems/activerecord-5.0.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+	from /home/lerner.67/.gem/ruby/gems/activerecord-5.0.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+	from (irb):3
+	from /home/lerner.67/.gem/ruby/gems/railties-5.0.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /home/lerner.67/.gem/ruby/gems/railties-5.0.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /home/lerner.67/.gem/ruby/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /home/lerner.67/.gem/ruby/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /home/lerner.67/.gem/ruby/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /home/lerner.67/.gem/ruby/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /home/lerner.67/.gem/ruby/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /home/lerner.67/.gem/ruby/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /home/lerner.67/.gem/ruby/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /var/www/Googol/bin/rails:9:in `<top (required)>'
+	from /opt/rh/rh-ruby23/root/usr/share/rubygems/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /opt/rh/rh-ruby23/root/usr/share/rubygems/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'

@@ -1,0 +1,60 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/michaelgrotton/searchEngineSites/master/intelius/css/intel.css">
+    <title>Intelius</title>
+  </head>
+  <body>
+    <div id="top">
+      <p id="title">intelius</p>
+    </div>
+    
+    <p id="prompt">Get the information you need on <span style="color:purple;" id="name">Francis E. Smith</span></p>
+    <script type="text/javascript">
+      document.getElementById('name').innerHTML = gon.cand; 
+    </script>
+    <div id="container">
+      <div id="check1">
+        <p id="ps" class="text">People Search Report</p>
+        <div id="contintro1">
+          <p id="intro1" class="text">
+            Includes all search results for Francis Smith in the United States
+          </p>
+        </div>
+        <div id="red">
+          <ul id="info">
+            <li class="text">&nbsp;Addresses</li>
+            <li class="text">&nbsp;Phone Numbers</li>
+            <li class="text">&nbsp;Location History</li>
+            <li class="text">&nbsp;Family Members</li>
+            <li class="text">&nbsp;Court Records</li>
+            <li class="text">&nbsp;Date of Birth</li>
+          </ul>   
+        </div>
+      </div>
+      <div id="check2">
+        <p id="psp" class="text">People Search Plus Report</p>
+        <div id="contintro2">
+          <p id="intro2" class="text">
+            Includes all search results, social network search, and email search.
+          </p>
+        </div>
+        <div id="blue">
+          <ul id="info">
+            <li class="text">&nbsp;Addresses</li>
+            <li class="text">&nbsp;Phone Numbers</li>
+            <li class="text">&nbsp;Location History</li>
+            <li class="text">&nbsp;Family Members</li>
+            <li class="text">&nbsp;Court Records</li>
+            <li class="text">&nbsp;Date of Birth</li>
+            <li class="text">&nbsp;Social Network</li>
+            <li class="text">&nbsp;Email Search</li>
+          </ul>   
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  <%= javascript_include_tag 'DisplayTimer' %>

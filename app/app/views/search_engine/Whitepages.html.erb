@@ -1,0 +1,37 @@
+<head>
+    <%= csrf_meta_tags %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/michaelgrotton/searchEngineSites/master/Whitepages/css/white.css">
+    <title>Whitepages Premium</title>
+  </head>
+  <body>
+    <div id="top">
+      <p id="logo"><span style="font-size:30px;"> Whitepages</span><i> PREMIUM</i></p>
+    </div>
+    <p id="header">Your Background Report Is Ready</p>
+    <div id="profile">
+      <img src="http://www.freeiconspng.com/uploads/am-a-19-year-old-multimedia-artist-student-from-manila--21.png" style="height:90px;width:90px;">
+    </div>
+    <p id="name"><b>Patrick B. Fisher</b></p>
+    <script type="text/javascript">
+      document.getElementById('name').innerHTML = gon.cand; 
+    </script>
+    <div id="continue">
+      <p class="text" id="report">Continue to Report <b>></b> </p>
+    </div>  
+    <p id="hey" class="text">We found information in one or more of the following categories:</p>
+    <div id="red">
+      <ul id="info">
+        <li class="text">&nbsp;Addresses</li>
+        <li class="text">&nbsp;Phone Numbers</li>
+        <li class="text">&nbsp;Location History</li>
+        <li class="text">&nbsp;Family Members</li>
+        <li class="text">&nbsp;Court Records</li>
+        <li class="text">&nbsp;Date of Birth</li>
+      </ul>   
+    </div>
+    <p id="copyright" class="text">&copy; Whitepages 2016.</p>
+  </body>
+  <%= javascript_include_tag 'DisplayTimer' %>
